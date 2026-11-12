@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة متابعة التحصيلات اليومية والمستهدفات - الإدارة المركزية لمحافظة الشرقية</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-lg py-6 mb-8">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-2xl md:text-3xl font-black mb-2">الإدارة المركزية للموارد المائية والري لمحافظة الشرقية</h1>
+            <p class="text-blue-200 text-sm md:text-base font-semibold">متابعة التحصيلات اليومية، مقارنة العام السابق، ومؤشرات الإنجاز مقابل المستهدفات</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 space-y-8 pb-12">
+
+        <!-- Section 1: Daily Report Message Box -->
+        <section class="bg-white rounded-2xl shadow-md p-6 border-r-8 border-blue-600">
+            <h2 class="text-lg font-bold text-blue-900 mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-bullhorn text-blue-600"></i> التقرير الإداري اليومي (ملخص الرسالة)
+            </h2>
+            <div class="bg-blue-50 border border-blue-100 rounded-xl p-5 text-gray-700 whitespace-pre-line leading-relaxed font-medium">
+الادارة المركزية للموارد المائية و الري لمحافظة الشرقية
+ملخص المتحصلات اليومية (2026/11/12):
+1. ري شرق الشرقية: 29,680
+2. ري غرب الشرقية: 2,165
+3. ري الصالحية: 0
+4. صرف جنوب الشرقية: 41,998
+5. صرف شمال الشرقية: 0
+6. صرف الشرقية: 0
+الإجمالي الكلي لمحافظة الشرقية: 73,843</div>
+        </section>
+
+        <!-- Section 2: Detailed Table with Targets & Previous Year Comparison -->
+        <section class="bg-white rounded-2xl shadow-md p-6 overflow-hidden">
+            <h2 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-table-cells text-blue-600"></i> الجدول التحليلي الشامل ومقارنة المستهدفات والعام السابق
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-[700px] text-right border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-blue-900 text-white">
+                            <th class="p-3">الإدارة العامة</th>
+                            <th class="p-3">تحصيل اليوم (2026/11/12)</th>
+                            <th class="p-3">نفس اليوم العام السابق (2025/11/12)</th>
+                            <th class="p-3">المستهدف الشهري (من ملف المستهدفات)</th>
+                            <th class="p-3">نسبة الإنجاز من المستهدف</th>
+                            <th class="p-3">مؤشر الأداء</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 font-medium">
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-3 font-bold text-blue-900">ري شرق الشرقية</td>
+                            <td class="p-3 text-green-600 font-bold">29,680</td>
+                            <td class="p-3 text-gray-600">25,400</td>
+                            <td class="p-3">5,824,927</td>
+                            <td class="p-3">0.51%</td>
+                            <td class="p-3"><span class="bg-green-100 text-green-800 px-2.5 py-1 rounded-full text-xs">نشط</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-3 font-bold text-blue-900">ري غرب الشرقية</td>
+                            <td class="p-3 text-green-600 font-bold">2,165</td>
+                            <td class="p-3 text-gray-600">1,900</td>
+                            <td class="p-3">7,723,532</td>
+                            <td class="p-3">0.03%</td>
+                            <td class="p-3"><span class="bg-yellow-100 text-yellow-800 px-2.5 py-1 rounded-full text-xs">متابعة</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-3 font-bold text-blue-900">ري الصالحية</td>
+                            <td class="p-3 text-gray-500 font-bold">0</td>
+                            <td class="p-3 text-gray-600">5,200</td>
+                            <td class="p-3">4,632,203</td>
+                            <td class="p-3">0.00%</td>
+                            <td class="p-3"><span class="bg-red-100 text-red-800 px-2.5 py-1 rounded-full text-xs">عجز / بدون تحصيل</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-3 font-bold text-blue-900">صرف جنوب الشرقية</td>
+                            <td class="p-3 text-green-600 font-bold">41,998</td>
+                            <td class="p-3 text-gray-600">38,500</td>
+                            <td class="p-3">961,595</td>
+                            <td class="p-3">4.37%</td>
+                            <td class="p-3"><span class="bg-green-100 text-green-800 px-2.5 py-1 rounded-full text-xs">ممتاز</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-3 font-bold text-blue-900">صرف شمال الشرقية</td>
+                            <td class="p-3 text-gray-500 font-bold">0</td>
+                            <td class="p-3 text-gray-600">0</td>
+                            <td class="p-3">306,561</td>
+                            <td class="p-3">0.00%</td>
+                            <td class="p-3"><span class="bg-gray-100 text-gray-800 px-2.5 py-1 rounded-full text-xs">بدون تحصيل</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-3 font-bold text-blue-900">صرف الشرقية</td>
+                            <td class="p-3 text-gray-500 font-bold">0</td>
+                            <td class="p-3 text-gray-600">1,200</td>
+                            <td class="p-3">165,789</td>
+                            <td class="p-3">0.00%</td>
+                            <td class="p-3"><span class="bg-red-100 text-red-800 px-2.5 py-1 rounded-full text-xs">عجز / بدون تحصيل</span></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-blue-50 font-bold text-blue-900">
+                            <td class="p-3">الإجمالي الكلي</td>
+                            <td class="p-3 text-blue-700">73,843</td>
+                            <td class="p-3 text-gray-700">72,200</td>
+                            <td class="p-3">19,614,607</td>
+                            <td class="p-3">0.38%</td>
+                            <td class="p-3">إجمالي الإدارة المركزية</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3: Charts Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Chart 1: Daily Collection vs Previous Year -->
+            <div class="bg-white rounded-2xl shadow-md p-6">
+                <h3 class="text-md font-bold text-blue-900 mb-4 text-center">مقارنة المتحصلات اليومية (اليوم الحالي vs العام السابق)</h3>
+                <div class="relative h-72">
+                    <canvas id="dailyComparisonChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Target vs Actual Collection -->
+            <div class="bg-white rounded-2xl shadow-md p-6">
+                <h3 class="text-md font-bold text-blue-900 mb-4 text-center">مقارنة المستهدف الشهري بالمتحصل الفعلي</h3>
+                <div class="relative h-72">
+                    <canvas id="targetVsActualChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center py-4 mt-12 text-sm">
+        <p>جميع الحقوق محفوظة © 2026 - الإدارة المركزية لموارد وري محافظة الشرقية</p>
+    </footer>
+
+    <!-- Chart Scripts -->
+    <script>
+        // Chart 1: Daily Comparison vs Previous Year
+        const ctx1 = document.getElementById('dailyComparisonChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['ري شرق', 'ري غرب', 'الصالحية', 'صرف جنوب', 'صرف شمال', 'صرف الشرقية'],
+                datasets: [
+                    {
+                        label: 'تحصيل اليوم (2026/11/12)',
+                        data: [29680, 2165, 0, 41998, 0, 0],
+                        backgroundColor: '#1d4ed8'
+                    },
+                    {
+                        label: 'نفس اليوم العام السابق (2025/11/12)',
+                        data: [25400, 1900, 5200, 38500, 0, 1200],
+                        backgroundColor: '#93c5fd'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Chart 2: Targets vs Actuals (Using logarithmic scale or normalized view due to large target numbers vs daily numbers)
+        const ctx2 = document.getElementById('targetVsActualChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['ري شرق', 'ري غرب', 'الصالحية', 'صرف جنوب', 'صرف شمال', 'صرف الشرقية'],
+                datasets: [
+                    {
+                        label: 'المستهدف الشهري',
+                        data: [5824927, 7723532, 4632203, 961595, 306561, 165789],
+                        backgroundColor: '#94a3b8'
+                    },
+                    {
+                        label: 'المتحصل الفعلي',
+                        data: [29680, 2165, 0, 41998, 0, 0],
+                        backgroundColor: '#2563eb'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { 
+                        type: 'logarithmic',
+                        beginAtZero: true,
+                        title: { display: true, text: 'القيمة (مقياس لوغاريتمي للمقارنة)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
